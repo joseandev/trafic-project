@@ -1,0 +1,7 @@
+{
+  "name": "trafic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
