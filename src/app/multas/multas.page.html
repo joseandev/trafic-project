@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Multas Registradas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content><br>
+  <div class="logo-intrant">
+    <img id="img" class="derecha" width="180%" height="90%" src="assets/dige.jpg"><br>
+  </div><br><br>
+  <div *ngFor="let multa of multas;  index as i;">
+
+    <ion-item class="fondoo" (click)="show(i)">
+      <ion-label>Placa:</ion-label>
+      <p>{{ multa.placa }}</p>
+    </ion-item>
+
+    <ng-template [ngIf]="bool[i]">
+    
+      <ion-item class="fondo">
+        <ion-label>Fecha:</ion-label>
+        <p> {{ multa.fecha }}</p>
+      </ion-item>
+
+      <ion-item class="fondo">
+        <ion-label>Cedula:</ion-label>
+        <p>{{ multa.cedula }}</p>
+      </ion-item>
+
+      <ion-item class="fondo">
+        <ion-label>Motivo:</ion-label>
+        <p>{{ multa.motivo }}</p>
+      </ion-item>
+      <br><br>
+    
+    </ng-template>
+
+  </div>
+
+</ion-content>

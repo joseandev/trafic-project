@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Conductor por Licencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel">
+    <div class="text-center" style="margin-top:10%">
+      <div class="circle"></div>
+      <div class="circle1"></div>
+    </div>
+  </div>
+  <section id="contenedor">
+    <div id="central">
+      <div id="login">
+        <h1 class="titulo" style="text-transform: uppercase; font-size: 19px; text-align: center;  padding: 0; padding-top: 5px;">
+          Consulta de Conductor
+        </h1>
+        <form method="post" action="/consultas/resultado" id="forma">
+          <div class="row">
+            <div class="col-sm-3 hide"></div>
+            <div class="login-html" id="animate" style="color: #fff !important;">
+              <div class="row">
+                <div class="logo-amet">
+                  <img class="izquierda" id="responsive" width="50%" height="100" src="assets/logo-procuraduria.png">
+                </div>
+                <div class="logo-intrant">
+                  <img id="img" class="derecha" width="50%" height="80" src="assets/intrant.png"><br>
+                </div><br><br>
+              </div>
+              <br>
+              <br><br><br>
+
+              <br>
+              <div class="login-form">
+                <div class="group">
+                  <label for="cedula" class="label">Licencia de conductor</label> <br>
+                  <ion-input (keypress)="verificar()" name="licencia" [(ngModel)]="licencia" color="light" id="cedula" type="text" class="input"></ion-input>
+
+                </div> <br>
+
+                <div class="hr"></div>
+
+                <div class="group">
+                  <div class="row">
+                    <div class="col-md-7">
+
+                    </div>
+                    <div>
+                      <ion-button (click)="buscar()" [disabled]="isDisabled" type="submit" expand="block" color="success">Consultar
+                      </ion-button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 hide"></div>
+            <div class="col-sm-6 col-sm-offset-6" id="contenedorResultado">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="inferior">
+      </div>
+    </div>
+    <script src="/consultas/Scripts/jquery-ui.min.js"></script>
+    <script src="/consultas/Scripts/paging.js"></script>
+  </section>
+
+  
+<ng-template [ngIf]="bool">
+  
+  <ion-item class="fondo" >
+    <ion-label position="floating" style="color:rgb(22, 0, 148);">Nombre</ion-label>
+    <ion-input disabled [(ngModel)]="conductor.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <img [src]="conductor.foto" alt="">
+  </ion-item>
+
+  <ion-item class="fondo" >
+    <ion-label position="floating" style="color:rgb(22, 0, 148);">Fecha de nacimiento</ion-label>
+    <ion-input disabled [(ngModel)]="conductor.nacimiento"></ion-input>
+  </ion-item>
+
+    <ion-item class="fondo" >
+    <ion-label position="floating" style="color:rgb(22, 0, 148);">Telefono</ion-label>
+    <ion-input disabled [(ngModel)]="conductor.telefono"></ion-input>
+  </ion-item>
+
+  <ion-item class="fondo" >
+    <ion-label position="floating" style="color:rgb(22, 0, 148);">Direccion</ion-label>
+    <ion-input disabled [(ngModel)]="conductor.direccion"></ion-input>
+  </ion-item>
+ 
+</ng-template>
+
+</ion-content>

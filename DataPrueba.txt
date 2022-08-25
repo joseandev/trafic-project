@@ -1,0 +1,26 @@
+Aplicar multa
+
+Cedula = 11 digitos
+Como las multas no solo se ponen a personas que andan vehiculos, la placa es 
+opcional ejempl K569845
+Es necesario subir una imagen
+Motivo != ''
+comentario != ''
+hora != ''
+latitud >= 8
+longitud >= 8
+
+Vehiculos por placa
+
+G134824
+I983521
+---G845223
+J873522
+U745039
+
+Conductores por licencia
+
+00100032103
+20033054006
+54000543903
+78005862900

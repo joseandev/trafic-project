@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Aplicar Multa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  
+  <ion-item>
+    <ion-label position="floating">Cedula</ion-label>
+    <ion-input (keypress)="verificar()" [(ngModel)]="cedula"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Placa</ion-label>
+    <ion-input (keypress)="verificar()" [(ngModel)]="placa"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Agregue una imagen</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-input (change)="cargarImagen($event)" [ngModel]="imgName" type="file" accept="image/*"></ion-input>
+  </ion-item>
+
+  <ng-template [ngIf]="bool"><img src="{{ srcImg }}" alt=""></ng-template>
+  
+  <ion-item>
+    <ion-label>Motivo</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-select [(ngModel)]="motivo" multiple="false">
+      <ion-select-option *ngFor="let motivo of motivos" value="{{  motivo }}">{{ motivo }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea (keypress)="verificar()" [(ngModel)]="comentario" rows="4" cols="20" placeholder="Comentario..."></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Hora</ion-label>
+    <ion-input (keypress)="verificar()" [(ngModel)]="hora"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Latitud</ion-label>
+    <ion-input (keypress)="verificar()" [(ngModel)]="latitud"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Longitud</ion-label>
+    <ion-input (keypress)="verificar()" [(ngModel)]="longitud"></ion-input>
+  </ion-item>
+
+  <ion-button color="tertiary" expand="block" class="boton"  class="ion-margin-top" color="success" [disabled]="desactivarBtn" (click)="agregar()" class="ion-text-center">Agregar</ion-button>
+</ion-content>

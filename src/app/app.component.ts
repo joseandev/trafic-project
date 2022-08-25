@@ -6,13 +6,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Tarifario de multas', url: '/tarifa', icon: 'copy' },
+    { title: 'Vehículo por placa', url: '/vehiculo', icon: 'car' },
+    { title: 'Aplicar Multa', url: '/aplicarmulta', icon: 'clipboard' },
+    { title: 'Conductor licencia', url: '/conductor', icon: 'card' },
+    { title: 'Multas registradas', url: '/multas', icon: 'archive' },
+    { title: 'Mapa de multas', url: '/mapamultas', icon: 'map' },
+    { title: 'Noticias', url: '/noticias', icon: 'globe' },
+    { title: 'Estado del clima', url: '/climaradar', icon: 'partly-sunny' },
+    { title: 'Horóscopo ', url: '/horoscopo', icon: 'aperture' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  public labels = 
+  [
+    { title: 'Cerrar Sesión', url: '/login', icon: 'log-out' }
+  ];
   constructor() {}
 }

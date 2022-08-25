@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tarifario de Multas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="fondo">
+  <ion-list-header>
+    <p style="color:rgb(12, 9, 168); font-size:16px" ><strong> Infraciones</strong> &nbsp;&nbsp;<strong>&</strong> &nbsp;&nbsp;<strong> Montos</strong></p>
+  </ion-list-header></ion-item>
+
+
+  <ion-item class="fondoo" *ngFor="let motivo of motivos; index as i">
+<!--     <ion-label>{{ motivo[0] }}</ion-label> <br> <ion-label>{{ motivo[1] }}</ion-label> -->
+    <p>{{ motivo[0] }}</p>
+    <p class="precios">{{ motivo[1] }}</p>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ubicación & clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ion-padding">
+    <ion-button (click)="getCurrentCoordinates()" expand="block">
+      Optener Mi ubicación 
+    </ion-button>
+  <ion-list>
+    <ion-list-header>
+      <p style="color:darkslateblue; font-size:17px"><strong> Coordenadas de la ubicación</strong></p>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>
+        Latitud
+      </ion-label>
+      <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Longitud
+      </ion-label>
+      <ion-badge color="danger" slot="end">{{longitude}}</ion-badge>
+    </ion-item>
+    </ion-list> 
+    <br>
+    <div id="login">
+      <h1 class="titulo">
+         The Weather 
+      </h1>
+
+      <form method="post" action="/consultas/resultado" id="forma">
+        <div class="row">
+          <div class="col-sm-3 hide"></div>
+          <div class="login-html" id="animate" style="color: #fff !important;">
+            <div class="row">
+              <div class="logo" align="middle">
+                <ion-icon name="rainy" ></ion-icon> <br><br>
+                <label class="lluvia"><strong> Partly Cloudy </strong></label>
+              </div><br>
+              <div class="logob" align="middle">
+                <label class="lluvia"><strong> 28°c</strong></label>
+              </div>
+              <br><br>
+              <div class="logo-intrana">
+                <img id="img" class="derecha" width="110%" height="130" src="assets/clim.png"><br>
+              </div><br><br>
+            </div>
+            <br>
+            <br><br><br>
+          </div>
+          <div class="col-sm-3 hide"></div>
+          <div class="col-sm-6 col-sm-offset-6" id="contenedorResultado">
+          </div>
+        </div>
+      </form>
+    </div> <br>
+
+
+    <ion-datetime>
+      <span slot="time-label">Hora</span>
+    </ion-datetime>
+  </div>
+</ion-content>
+Markup

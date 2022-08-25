@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form name="login">
+    <ion-item lines="full">
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input  [(ngModel)]="email" name="usuario" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input  [(ngModel)]="password" type="text" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="tertiary" expand="block" value="Entrar" class="ion-margin-top" type="submit" expand="block" (click)="onSubmit()"  type="button" >
+          <ion-icon name="logo-log-in" slot="start"></ion-icon>
+          Ingresar</ion-button>
+
+          <ion-button type="reset" name="Borrar" expand="block" id="Borrar" value="Reset" class="boton"> Limpiar</ion-button>
+
+          <br>
+        <a [routerLink]="['/forgot-password']" class="small-text" style="color: rgb(16, 212, 247); font-size: 17px">¿Has olvidado tu contraseña?</a>
+      </ion-col>
+    </ion-row><br>
+
+    <label  style="color: #fff; font-size: 16px" color>Solo los miembros pueden acceder</label><br>
+    <ion-button  [routerLink]="['/inicio']" type="button" expand="block" color="light" fill="clear" style=" font-size: 15px">¡Sobre Nosotros!</ion-button>
+    
+  </form>
+  
+</ion-content>
